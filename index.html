@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <h1 class="title">🎯 Spin the Wheel Quiz 🎯</h1>
+        
+        <!-- Wheel Container -->
+        <div id="wheelContainer" class="wheel-container">
+            <div class="wheel-wrapper">
+                <!-- Wheel -->
+                <canvas id="wheelCanvas" width="400" height="400"></canvas>
+                
+                <!-- Spin Button -->
+                <button id="spinBtn" class="spin-btn">SPIN!</button>
+                
+                <!-- Pointer -->
+                <div class="pointer"></div>
+            </div>
+            
+            <!-- Settings -->
+            <div class="settings">
+                <label for="segmentCount">Number of Questions:</label>
+                <input type="number" id="segmentCount" value="80" min="10" max="100">
+                <button id="updateWheel" class="update-btn">Update Wheel</button>
+            </div>
+        </div>
+        
+        <!-- Congratulations Screen -->
+        <div id="congratsScreen" class="congrats-screen hidden">
+            <div class="congrats-content">
+                <h2>🎉 Congratulations! 🎉</h2>
+                <p>You landed on question number:</p>
+                <div id="selectedNumber" class="selected-number"></div>
+                <button id="goToQuestion" class="question-btn">Go to Question</button>
+                <button id="spinAgain" class="spin-again-btn">Spin Again</button>
+            </div>
+        </div>
+        
+        <!-- Question Screen -->
+        <div id="questionScreen" class="question-screen hidden">
+            <div class="question-content">
+                <div class="question-header">
+                    <span id="questionNumber" class="question-number"></span>
+                    <button id="backToWheel" class="back-btn">← Back to Wheel</button>
+                </div>
+                
+                <h3 id="questionText" class="question-text"></h3>
+                
+                <div id="answerOptions" class="answer-options">
+                    <!-- Answer options will be populated by JavaScript -->
+                </div>
+                
+                <div id="result" class="result hidden">
+                    <p id="resultText"></p>
+                    <button id="nextQuestion" class="next-btn">Next Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
